@@ -56,7 +56,54 @@ body {
     background-color: $primary-color;
     display: flex;
     grid-area: b;
+    #produto-order{
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 300px;
+        #content-order{
+            width: 180px;
+            @extend flexCentralize;
+            position: relative;
+            border: 1px solid $secund-color;
+            background-color: $primary-color;
+                #option-order{
+                    @extend flexCentralize;
+                    padding: 5px;
+                }
+                #option-order:hover{
+                    width: 100%;
+                    background-color: $third-color;
+                }
+                
+        }
+        #list-order{
+            display: none;
+        }
+        ul{
+            width: 180px;
+            position: absolute;
+            @extend flexCentralize;
+            top: 34px;
+            flex-direction: column;
+            align-items: flex-start;
+            list-style: none;
+            border-top: 0px;
+            border: 1px solid $secund-color;
+            background-color: $primary-color;
+            li{
+                padding: 5px;
+                width: 100%;
+                height: 100%;
+            }
+            li:hover{
+                background-color: $third-color;
+            }
+        }
+    }
     #content-produtos{
+        width: 100%;
         @extend flexCentralize;
         flex-direction: column;
     }
@@ -138,6 +185,7 @@ body {
             flex-direction: column;
             font-weight: 500;
             margin-left: 25px;
+            animation: produtosMove 1s ease;
             .item-img{
                 margin-top: 40px;
             }
@@ -157,6 +205,10 @@ body {
                 border: none;
                 cursor: pointer;
                 margin: 15px 0px 0px 0px;
+            }
+            @keyframes produtosMove {
+                0%{transform: translateY(150px); opacity: 0;}
+                100%{transform: translateY(0px);opacity: 1;}
             }
         }
     }
