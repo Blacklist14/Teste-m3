@@ -227,4 +227,8 @@ body {
 }
 #baseboard-content {
     grid-area: f;
+    background-color: $secund-color;
+    color: $primary-color;
+    height: 50px;
+    @extend flexCentralize;
 }

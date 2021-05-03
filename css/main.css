@@ -1,6 +1,6 @@
 * { margin: 0px; padding: 0px; -webkit-box-sizing: border-box; box-sizing: border-box; image-rendering: optimizeQuality; font-family: 'Fira Code', monospace; }
 
-flexCentralize, #top-content, #top-content #card-not, #body-content #produto-order #content-order, #body-content #produto-order #content-order #option-order, #body-content #produto-order ul, #body-content #content-produtos, #body-content #content-filter #filter-list, #body-content #content-filter #filter-list #ver-cores, #body-content #content-filter #filter-list #tamanho-content .filter-tamanho, #body-content #produtos-main .item-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+flexCentralize, #top-content, #top-content #card-not, #body-content #produto-order #content-order, #body-content #produto-order #content-order #option-order, #body-content #produto-order ul, #body-content #content-produtos, #body-content #content-filter #filter-list, #body-content #content-filter #filter-list #ver-cores, #body-content #content-filter #filter-list #tamanho-content .filter-tamanho, #body-content #produtos-main .item-content, #baseboard-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
 body { display: -ms-grid; display: grid; -ms-grid-columns: 1fr; grid-template-columns: 1fr; -ms-grid-rows: 10vh 100% 10vh; grid-template-rows: 10vh 100% 10vh; grid-template-areas: "t" "b" "f"; }
 
@@ -98,5 +98,5 @@ body { display: -ms-grid; display: grid; -ms-grid-columns: 1fr; grid-template-co
 
 #body-content #item-carregar { background-color: #0084ff; color: white; cursor: pointer; height: 40px; width: 180px; margin: 50px; font-size: 15px; font-weight: 500; white-space: nowrap; border: none; }
 
-#baseboard-content { -ms-grid-row: 3; -ms-grid-column: 1; grid-area: f; }
+#baseboard-content { -ms-grid-row: 3; -ms-grid-column: 1; grid-area: f; background-color: black; color: white; height: 50px; }
 /*# sourceMappingURL=main.css.map */
