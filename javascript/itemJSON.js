@@ -78,143 +78,160 @@ let itemJSON = [{
     "valorString":"43,00",
     "cor":"marrom",
     "tamanho":"g"
-},
-{
-    "imagem": "https://i.pinimg.com/564x/74/f9/93/74f993732316a6e6569b3da688beb318.jpg",
-    "nome": "cropped stripes",
-    "valor": "120.00",
-    "valorString":"120,00",
-    "cor":"verde",
-    "tamanho":"p"
 }
 ]
-
 /*COLOCA OS JSON NA TELA*/
+const itemContent = document.querySelectorAll(".item-content")
+const caixa = document.querySelector("#produtos-main")
 const render = ()=>{
-    let itemContent = document.querySelectorAll(".item-content")
     let itemImg = document.querySelectorAll(".item-img")
-itemImg.forEach((props, val) => {
-    props.setAttribute("src", `${itemJSON[val].imagem}`)
-})
+    itemImg.forEach((props, val) => {
+        props.setAttribute("src", `${itemJSON[val].imagem}`)
+    })
 
-let itemName = document.querySelectorAll(".item-name")
-itemName.forEach((props, val) => {
-    props.innerHTML = itemJSON[val].nome.toUpperCase()
-})
+    let itemName = document.querySelectorAll(".item-name")
+    itemName.forEach((props, val) => {
+        props.innerHTML = itemJSON[val].nome.toUpperCase()
+    })
 
-let itemValue = document.querySelectorAll(".item-value")
-itemValue.forEach((props, val) => {
-    props.innerHTML = "R$ " + itemJSON[val].valorString
-})
+    let itemValue = document.querySelectorAll(".item-value")
+    itemValue.forEach((props, val) => {
+        props.innerHTML = "R$ " + itemJSON[val].valorString
+    })
+    
 }
+
 render()
+
+const displayItem = () =>{
+        itemContent.forEach((props, val) => {
+            if(props.style.display == "none"){
+                props.style.display = "flex"
+            }
+        })
+}
+const contentFilter = () => {
+    const itemContent = document.querySelectorAll(".item-content")
+    itemContent.forEach((props, val) => {
+        props.style.display = "none"
+    })
+}
 /* FILTRAÇÃO POR VALOR */
 let filter1 = 0
 let filter2 = 0
 let filter3 = 0
 let filter4 = 0
 let filter5 = 0
-let itemContent = document.querySelectorAll(".item-content")
 
-let displayItem = () =>{
-        itemContent.forEach((props, val) => {
-            itemContent[val].style.display = "flex"
-            console.log(itemContent[val])
-        })
-}
-let contentFilter = () => {
-    itemContent.forEach((props, val) => {
-        props.style.display = "none"
-    })
-}
 
 document.querySelector("#faixa-50").addEventListener("click", () => {
     contentFilter()
+    const itemContent = document.querySelectorAll(".item-content")
     if (filter1 <= 0) {
-        itemJSON.forEach((props, val) => {
-            if (itemJSON[val].valor > 0) {
-                if (itemJSON[val].valor < 50) {
-                    contentFilter
-                    itemContent[val].style.display = "flex"
+        itemContent.forEach((parametro, valor) => {
+            itemJSON.forEach((props,val)=>{
+                if(itemJSON[valor].valor > 0){
+                    if(itemJSON[valor].valor < 50){
+                        parametro.style.display = "flex"
+                    }
                 }
-            }
+            })  
         })
     }
     filter1++
     if (filter1 >= 2) {
-        displayItem()
+        itemContent.forEach((parametro,val)=>{
+            parametro.style.display = "flex"
+        })
         filter1 = 0
     }
 
 })
-
 document.querySelector("#faixa-150").addEventListener("click", () => {
     contentFilter()
+    const itemContent = document.querySelectorAll(".item-content")
     if (filter2 <= 0) {
-        itemJSON.forEach((props, val) => {
-            if (itemJSON[val].valor > 51) {
-                if (itemJSON[val].valor < 150) {
-                    itemContent[val].style.display = "flex"
+        itemContent.forEach((parametro, valor) => {
+            itemJSON.forEach((props,val)=>{
+                if(itemJSON[valor].valor > 51){
+                    if(itemJSON[valor].valor < 150){
+                        parametro.style.display = "flex"
+                    }
                 }
-            }
+            })  
         })
     }
     filter2++
     if (filter2 >= 2) {
-        displayItem()
+        itemContent.forEach((parametro,val)=>{
+            parametro.style.display = "flex"
+        })
         filter2 = 0
     }
 })
-
 document.querySelector("#faixa-300").addEventListener("click",()=>{
     contentFilter()
-    let itemContent = document.querySelectorAll(".item-content")
-    if(filter3 <= 0){   
-    itemJSON.forEach((props,val)=>{
-        if(itemJSON[val].valor > 151){
-            if(itemJSON[val].valor < 300){
-                itemContent[val].style.display = "flex"
+    const itemContent = document.querySelectorAll(".item-content")
+    if(filter3 <= 0){  
+    itemContent.forEach((parametro, valor) => {
+        itemJSON.forEach((props,val)=>{
+            if(itemJSON[valor].valor > 151){
+                if(itemJSON[valor].valor < 300){
+                    parametro.style.display = "flex"
+                }
             }
-        }
-    })  
+        })  
+    })
     }
     filter3++
     if(filter3 >=2){
-        displayItem()
+        itemContent.forEach((parametro,val)=>{
+            parametro.style.display = "flex"
+        })
         filter3 = 0
     }
 })
 document.querySelector("#faixa-500").addEventListener("click", () => {
     contentFilter()
+    const itemContent = document.querySelectorAll(".item-content")
     if (filter4 <= 0) {
-        itemJSON.forEach((props, val) => {
-            if (itemJSON[val].valor > 301) {
-                if (itemJSON[val].valor < 500) {
-                    contentFilter()
-                    itemContent[val].style.display = "flex"
+        itemContent.forEach((parametro, valor) => {
+            itemJSON.forEach((props,val)=>{
+                if(itemJSON[valor].valor > 301){
+                    if(itemJSON[valor].valor < 500){
+                        parametro.style.display = "flex"
+                    }
                 }
-            }
+            })  
         })
     }
     filter4++
     if (filter4 >= 2) {
-        displayItem()
+        itemContent.forEach((parametro,val)=>{
+            parametro.style.display = "flex"
+        })
         filter4 = 0
     }
 })
 
 document.querySelector("#faixa-aparti-1").addEventListener("click", () => {
     contentFilter()
+    const itemContent = document.querySelectorAll(".item-content")
     if (filter5 <= 0) {
-        itemJSON.forEach((props, val) => {
-            if (itemJSON[val].valor > 1) {
-                itemContent[val].style.display = "flex"
-            }
+        itemContent.forEach((parametro, valor) => {
+            itemJSON.forEach((props,val)=>{
+                if(itemJSON[valor].valor > 1 ){
+                    parametro.style.display = "flex"
+                }
+                
+            })  
         })
     }
     filter5++
     if (filter5 >= 2) {
-        displayItem()
+        itemContent.forEach((parametro,val)=>{
+            parametro.style.display = "flex"
+        })
         filter5 = 0
     }
 })
@@ -388,19 +405,18 @@ document.querySelector("#tamanho-46").addEventListener("click", () => {
 
 let refil = 0
 document.querySelector("#item-carregar").addEventListener("click", () => {
-    if(refil < 3){
-        let caixa = document.querySelector("#produtos-main")
-        let caixinha = `<div class="item-content">
+    if(refil < 2){
+        const caixinha = `<div class="item-content">
         <img class="item-img" alt="">
         <p class="item-name">teste</p>
         <span class="item-value"></span>
         <p class="item-div">até 3x de R$40,00</p>
         <button class="item-button">COMPRAR</button>
         </div>`
-        caixa.innerHTML= caixa.innerHTML + caixinha
+        caixa.innerHTML += caixinha
+        render()
+        refil++
     }
-    refil++
-    render()
 })
 
 /*COMPRA ITENS */
@@ -408,7 +424,7 @@ let number = 1
 buttonCompra = document.querySelectorAll(".item-button")
 buttonCompra.forEach((props,val)=>{
     props.addEventListener("click",()=>{
-        let carrinho = document.querySelector("#card-not")
+        const carrinho = document.querySelector("#card-not")
         carrinho.innerHTML = number++
     })
 })
