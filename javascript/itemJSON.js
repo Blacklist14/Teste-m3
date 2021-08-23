@@ -20,7 +20,7 @@ let itemJSON = [{
     "nome": "pochete clutch",
     "valor": "99.00",
     "valorString":"99,00",
-    "cor":"preto",
+    "cor":"azul",
     "tamanho":"38"
 },
 {
@@ -28,7 +28,7 @@ let itemJSON = [{
     "nome": "camisa transparente",
     "valor": "398.00",
     "valorString":"398,00",
-    "cor":"preto",
+    "cor":"cinza",
     "tamanho":"42"
 },
 {
@@ -77,6 +77,13 @@ let itemJSON = [{
     "valor": "43.00",
     "valorString":"43,00",
     "cor":"marrom",
+    "tamanho":"g"
+},{
+    "imagem": "https://i.pinimg.com/236x/9e/24/1e/9e241e9c038777f7d00329bdd5e06bfa.jpg",
+    "nome": "saia em couro",
+    "valor": "43.00",
+    "valorString":"43,00",
+    "cor":"roxo",
     "tamanho":"g"
 }
 ]
